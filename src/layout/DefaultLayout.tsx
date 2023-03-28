@@ -1,11 +1,19 @@
+//lib
 import styled from "styled-components";
+import { useRecoilValue } from "recoil";
+import { CanvasHeightState, CanvasWidthState } from "@/atom";
+
+//components
 import { Canvas } from "@/components/Canvas";
 
 export default function DefaultLayout() {
+  const CanvasWidth = useRecoilValue(CanvasWidthState);
+  const CanvasHeight = useRecoilValue(CanvasHeightState);
+
   return (
     <Body>
       <CanvasCotainer>
-        <Canvas width={100} height={120} />
+        <Canvas width={CanvasWidth} height={CanvasHeight} />
       </CanvasCotainer>
       <MenuContainer></MenuContainer>
     </Body>
