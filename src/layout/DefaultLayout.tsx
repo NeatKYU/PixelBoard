@@ -15,7 +15,7 @@ export default function DefaultLayout() {
     <Body>
       <CanvasCotainer>
         {/* <Canvas width={CanvasWidth} height={CanvasHeight} /> */}
-        <CanvasGrid />
+        <CanvasGrid cellSize={10} columns={30} rows={30}/>
       </CanvasCotainer>
       <MenuContainer></MenuContainer>
     </Body>
@@ -37,6 +37,10 @@ const CanvasCotainer = styled.div`
   height: auto;
 
   padding: 2rem;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
   background-color: lightgray;
 `;
