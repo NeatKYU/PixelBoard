@@ -5,6 +5,7 @@ import { CanvasHeightState, CanvasWidthState } from "@/atom";
 
 //components
 import { Canvas } from "@/components/Canvas";
+import CanvasGrid from "@/components/CanvasGrid";
 
 export default function DefaultLayout() {
   const CanvasWidth = useRecoilValue(CanvasWidthState);
@@ -13,7 +14,8 @@ export default function DefaultLayout() {
   return (
     <Body>
       <CanvasCotainer>
-        <Canvas width={CanvasWidth} height={CanvasHeight} />
+        {/* <Canvas width={CanvasWidth} height={CanvasHeight} /> */}
+        <CanvasGrid />
       </CanvasCotainer>
       <MenuContainer></MenuContainer>
     </Body>
