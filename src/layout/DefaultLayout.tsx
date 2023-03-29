@@ -4,8 +4,8 @@ import { useRecoilValue } from 'recoil';
 import { CanvasHeightState, CanvasWidthState } from '@/atom';
 
 //components
-import { Canvas } from '@/components/Canvas';
-import CanvasGrid from '@/components/CanvasGrid';
+import { Canvas } from '@/components/common/Canvas';
+import CanvasGrid from '@/components/common/CanvasGrid';
 
 export default function DefaultLayout() {
     const CanvasWidth = useRecoilValue(CanvasWidthState);
