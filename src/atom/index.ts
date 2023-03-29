@@ -9,3 +9,8 @@ export const CanvasHeightState = atom({
   key: "CanvasHeightState",
   default: 16,
 });
+
+export const CanvasSizeState = atom({
+  key: "CanvasSizeState",
+  default: 15,
+})

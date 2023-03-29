@@ -44,27 +44,11 @@ export default function CanvasGrid(props: CanvasGridProps) {
         };
     }, [canvasRef, rows, columns, cellSize]);
 
-    // useEffect(() => {
-    //   const canvas = canvasRef.current;
-    //   if (canvas) {
-    //     const ctx = canvas.getContext("2d");
-    //     if (ctx !== null) {
-    //       for (let i = 0; i < rows; i++) {
-    //         for (let j = 0; j < columns; j++) {
-    //           ctx.fillStyle = "black";
-    //           ctx.fillRect(i * cellSize, j * cellSize, cellSize, cellSize);
-    //         }
-    //       }
-    //     }
-    //   }
-    // }, [canvasRef.current, canvasWidth, canvasHeight, cellSize, rows, columns]);
-
     const handleCellClick = (event: React.MouseEvent<HTMLCanvasElement>) => {
         const canvas = canvasRef.current;
         if (canvas) {
             const ctx = canvas.getContext('2d');
             if (ctx) {
-                console.log('event', event.nativeEvent);
                 const x = Math.floor(
                     (event.nativeEvent.offsetX / canvasWidth) * columns
                 );

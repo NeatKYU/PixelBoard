@@ -12,10 +12,19 @@ export const Button = (props: ButtonProps) => {
 };
 
 const Container = styled.div`
-    width: 60px;
+    min-width: 60px;
+    width: auto;
     height: 30px;
 
+    padding: 5px 10px;
+
     border-radius: 5px;
-    background-color: #000000;
-    color: white;
+    background-color: #CCCCCC;
+    color: black;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
 `;

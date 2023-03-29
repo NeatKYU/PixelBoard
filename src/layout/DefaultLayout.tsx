@@ -1,23 +1,27 @@
 //lib
 import styled from 'styled-components';
 import { useRecoilValue } from 'recoil';
-import { CanvasHeightState, CanvasWidthState } from '@/atom';
+import { CanvasHeightState, CanvasSizeState, CanvasWidthState } from '@/atom';
 
 //components
 import { Canvas } from '@/components/common/Canvas';
 import CanvasGrid from '@/components/common/CanvasGrid';
+import { SizeSetting } from '@/components/menu/SizeSetting';
 
 export default function DefaultLayout() {
     const CanvasWidth = useRecoilValue(CanvasWidthState);
     const CanvasHeight = useRecoilValue(CanvasHeightState);
+    const CanvasSize = useRecoilValue(CanvasSizeState);
 
     return (
         <Body>
             <CanvasCotainer>
                 {/* <Canvas width={CanvasWidth} height={CanvasHeight} /> */}
-                <CanvasGrid cellSize={15} columns={30} rows={15} />
+                <CanvasGrid cellSize={CanvasSize} columns={CanvasWidth} rows={CanvasHeight} />
             </CanvasCotainer>
-            <MenuContainer></MenuContainer>
+            <MenuContainer>
+                <SizeSetting/>
+            </MenuContainer>
         </Body>
     );
 }
@@ -52,4 +56,9 @@ const MenuContainer = styled.div`
     height: 100vh;
 
     padding: 1rem;
+
+    position: sticky;
+    top: 0;
 `;
+
+
