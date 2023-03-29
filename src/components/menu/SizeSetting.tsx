@@ -38,6 +38,7 @@ export const SizeSetting = () => {
     return (
         <Container>
             <Row>
+                <Label>canvas width</Label>
                 <Input width={'100px'} type={'number'} value={canvasWidth} readonly/>
                 <Button onClick={handleIncreaseWidth}>
                     <AiOutlinePlus/>
@@ -47,6 +48,7 @@ export const SizeSetting = () => {
                 </Button>
             </Row>
             <Row>
+                <Label>canvas height</Label>
                 <Input width={'100px'} type={'number'} value={canvasHeight} readonly/>
                 <Button onClick={handleIncreaseHeight}>
                     <AiOutlinePlus/>
@@ -56,6 +58,7 @@ export const SizeSetting = () => {
                 </Button>
             </Row>
             <Row>
+                <Label>canvas size</Label>
                 <Input width={'100px'} type={'number'} value={canvasSize} readonly/>
                 <Button onClick={handleIncreaseSize}>
                     <AiOutlinePlus/>
@@ -85,4 +88,11 @@ const Row = styled.div`
     align-items: center;
 
     gap: 10px;
+`
+
+const Label = styled.div`
+    width: 30%;
+    height: 100%;
+
+    color: white;
 `

@@ -12,7 +12,7 @@ export const Button = (props: ButtonProps) => {
 };
 
 const Container = styled.div`
-    min-width: 60px;
+    min-width: 30px;
     width: auto;
     height: 30px;
 

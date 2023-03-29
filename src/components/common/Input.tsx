@@ -39,8 +39,11 @@ const Container = styled.div<{width: string}>`
         background-color: transparent;
         border: none;
         outline: none;
+
+        text-align: center;
     }
 
+    // type Number일때 옆에 나오는 incre,decre 버튼 삭제
     input::-webkit-inner-spin-button {
         appearance: none;
         -moz-appearance: none;
