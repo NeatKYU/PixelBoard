@@ -1,4 +1,6 @@
+import { CanvasColorState } from '@/atom';
 import { useRef, useEffect, useState } from 'react';
+import { useRecoilValue } from 'recoil';
 
 interface CanvasGridProps {
     rows: number;
@@ -11,6 +13,7 @@ export default function CanvasGrid(props: CanvasGridProps) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const [canvasWidth, setCanvasWidth] = useState<number>(0);
     const [canvasHeight, setCanvasHeight] = useState<number>(0);
+    const canvasColor = useRecoilValue(CanvasColorState);
 
     const handleResize = () => {
         const canvas = canvasRef.current;
@@ -55,7 +58,7 @@ export default function CanvasGrid(props: CanvasGridProps) {
                 const y = Math.floor(
                     (event.nativeEvent.offsetY / canvasHeight) * rows
                 );
-                ctx.fillStyle = 'white';
+                ctx.fillStyle = canvasColor;
                 ctx.strokeStyle = '#eeeeeeb3';
                 ctx.fillRect(x * cellSize, y * cellSize, cellSize, cellSize);
                 ctx.strokeRect(x * cellSize, y * cellSize, cellSize, cellSize);

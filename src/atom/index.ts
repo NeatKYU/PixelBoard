@@ -12,5 +12,10 @@ export const CanvasHeightState = atom({
 
 export const CanvasSizeState = atom({
   key: "CanvasSizeState",
-  default: 15,
+  default: 25,
+})
+
+export const CanvasColorState = atom({
+  key: 'CanvasColorState',
+  default: '#ffffff'
 })
