@@ -40,30 +40,30 @@ export const SizeSetting = () => {
             <Row>
                 <Label>canvas width</Label>
                 <Input width={'100px'} type={'number'} value={canvasWidth} readonly/>
-                <Button onClick={handleIncreaseWidth}>
+                <Button onClick={handleIncreaseWidth} borderRadius={'5px'}>
                     <AiOutlinePlus/>
                 </Button>
-                <Button onClick={handleDecreaseWidth}>
+                <Button onClick={handleDecreaseWidth} borderRadius={'5px'}>
                     <AiOutlineMinus/>
                 </Button>
             </Row>
             <Row>
                 <Label>canvas height</Label>
                 <Input width={'100px'} type={'number'} value={canvasHeight} readonly/>
-                <Button onClick={handleIncreaseHeight}>
+                <Button onClick={handleIncreaseHeight} borderRadius={'5px'}>
                     <AiOutlinePlus/>
                 </Button>
-                <Button onClick={handleDecreaseHeight}>
+                <Button onClick={handleDecreaseHeight} borderRadius={'5px'}>
                     <AiOutlineMinus/>
                 </Button>
             </Row>
             <Row>
                 <Label>canvas size</Label>
                 <Input width={'100px'} type={'number'} value={canvasSize} readonly/>
-                <Button onClick={handleIncreaseSize}>
+                <Button onClick={handleIncreaseSize} borderRadius={'5px'}>
                     <AiOutlinePlus/>
                 </Button>
-                <Button onClick={handleDecreaseSize}>
+                <Button onClick={handleDecreaseSize} borderRadius={'5px'}>
                     <AiOutlineMinus/>
                 </Button>
             </Row>
