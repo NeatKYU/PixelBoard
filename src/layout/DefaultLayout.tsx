@@ -8,6 +8,7 @@ import { Canvas } from '@/components/common/Canvas';
 import CanvasGrid from '@/components/common/CanvasGrid';
 import { SizeSetting } from '@/components/menu/SizeSetting';
 import { Palate } from '@/components/menu/Palate';
+import { Control } from '@/components/menu/Control';
 
 export default function DefaultLayout() {
     const CanvasWidth = useRecoilValue(CanvasWidthState);
@@ -23,6 +24,7 @@ export default function DefaultLayout() {
             <MenuContainer>
                 <SizeSetting/>
                 <Palate/>
+                <Control/>
             </MenuContainer>
         </Body>
     );
