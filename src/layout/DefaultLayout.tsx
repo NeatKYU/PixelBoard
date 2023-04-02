@@ -4,7 +4,6 @@ import { useRecoilValue } from 'recoil';
 import { CanvasHeightState, CanvasSizeState, CanvasWidthState } from '@/atom';
 
 //components
-import { Canvas } from '@/components/common/Canvas';
 import CanvasGrid from '@/components/common/CanvasGrid';
 import { SizeSetting } from '@/components/menu/SizeSetting';
 import { Palate } from '@/components/menu/Palate';
@@ -18,7 +17,6 @@ export default function DefaultLayout() {
     return (
         <Body>
             <CanvasCotainer>
-                {/* <Canvas width={CanvasWidth} height={CanvasHeight} /> */}
                 <CanvasGrid cellSize={CanvasSize} columns={CanvasWidth} rows={CanvasHeight} />
             </CanvasCotainer>
             <MenuContainer>

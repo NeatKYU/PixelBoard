@@ -2,13 +2,11 @@ import styled from 'styled-components'
 import { Button } from '@/components/common/Button'
 import { FaUpload, FaDownload } from 'react-icons/fa'
 import { useRecoilValue } from 'recoil'
-import { CanvasCoodinateState, CanvasHeightState, CanvasRefState, CanvasSizeState, CanvasWidthState } from '@/atom'
+import { CanvasCoodinateState, CanvasRefState, CanvasSizeState } from '@/atom'
 
 export const Control = () => {
 
 	const canvasRef = useRecoilValue<any>(CanvasRefState);
-	const rows = useRecoilValue(CanvasHeightState);
-	const columns = useRecoilValue(CanvasWidthState);
 	const size = useRecoilValue(CanvasSizeState);
 	const canvasCoodinate = useRecoilValue(CanvasCoodinateState);
 
