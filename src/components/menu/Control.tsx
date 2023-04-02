@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Button } from '@/components/common/Button'
 import { FaUpload, FaDownload } from 'react-icons/fa'
 import { useRecoilValue } from 'recoil'
-import { CanvasHeightState, CanvasRefState, CanvasSizeState, CanvasWidthState } from '@/atom'
+import { CanvasCoodinateState, CanvasHeightState, CanvasRefState, CanvasSizeState, CanvasWidthState } from '@/atom'
 
 export const Control = () => {
 
@@ -10,6 +10,7 @@ export const Control = () => {
 	const rows = useRecoilValue(CanvasHeightState);
 	const columns = useRecoilValue(CanvasWidthState);
 	const size = useRecoilValue(CanvasSizeState);
+	const canvasCoodinate = useRecoilValue(CanvasCoodinateState);
 
 	const handleDownload = () => {
         const canvas = canvasRef;
@@ -17,13 +18,11 @@ export const Control = () => {
             const link = document.createElement('a');
             link.download = 'drawing.png';
 			const ctx = canvas.getContext('2d');
-			// ctx.clearRect(0, 0, canvas.width, canvas.height);
-			for (let i = 0; i < rows; i++) {
-				for (let j = 0; j < columns; j++) {
-					ctx.strokeStyle = '#eeeeee2';
-					ctx.strokeRect(i*size, j*size, size, size);
-				}
-			}
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			canvasCoodinate.map((item) => {
+				ctx.fillStyle = item.color;
+				ctx.fillRect(item.x * size, item.y * size, size, size)
+			})
             link.href = canvas.toDataURL();
             link.click();
         }

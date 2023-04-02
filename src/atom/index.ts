@@ -1,22 +1,22 @@
 import { atom } from "recoil";
 import { CanvasCoodi } from '@/interface/index'
 
-export const CanvasWidthState = atom({
+export const CanvasWidthState = atom<number>({
   key: "CanvasWidthState",
   default: 16,
 });
 
-export const CanvasHeightState = atom({
+export const CanvasHeightState = atom<number>({
   key: "CanvasHeightState",
   default: 16,
 });
 
-export const CanvasSizeState = atom({
+export const CanvasSizeState = atom<number>({
   key: "CanvasSizeState",
   default: 25,
 })
 
-export const CanvasColorState = atom({
+export const CanvasColorState = atom<string>({
   key: 'CanvasColorState',
   default: '#ffffff'
 })

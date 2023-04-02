@@ -1,7 +1,6 @@
 import { CanvasColorState, CanvasCoodinateState, CanvasRefState } from '@/atom';
 import { useRef, useEffect, useState } from 'react';
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
-import { Button } from './Button';
 import { CanvasCoodi } from '@/interface/index'
 
 interface CanvasGridProps {
@@ -40,6 +39,10 @@ export default function CanvasGrid(props: CanvasGridProps) {
                         );
                     }
                 }
+                canvasCoodinate.map((item) => {
+                    ctx.fillStyle = item.color;
+                    ctx.fillRect(item.x * cellSize, item.y * cellSize, cellSize, cellSize)
+                })
             }
         }
     };
@@ -50,7 +53,7 @@ export default function CanvasGrid(props: CanvasGridProps) {
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    }, [canvasRef, rows, columns, cellSize]);
+    }, [canvasRef, rows, columns, cellSize, canvasCoodinate]);
 
     const handleCellClick = (event: React.MouseEvent<HTMLCanvasElement>) => {
         const canvas = canvasRef.current;
