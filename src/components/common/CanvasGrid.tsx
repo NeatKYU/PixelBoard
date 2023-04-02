@@ -1,6 +1,8 @@
-import { CanvasColorState } from '@/atom';
+import { CanvasColorState, CanvasCoodinateState, CanvasRefState } from '@/atom';
 import { useRef, useEffect, useState } from 'react';
-import { useRecoilValue } from 'recoil';
+import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
+import { Button } from './Button';
+import { CanvasCoodi } from '@/interface/index'
 
 interface CanvasGridProps {
     rows: number;
@@ -14,10 +16,13 @@ export default function CanvasGrid(props: CanvasGridProps) {
     const [canvasWidth, setCanvasWidth] = useState<number>(0);
     const [canvasHeight, setCanvasHeight] = useState<number>(0);
     const canvasColor = useRecoilValue(CanvasColorState);
+    const setCanvasRef = useSetRecoilState<any>(CanvasRefState);
+    const [canvasCoodinate, setCanvasCoodinate] = useRecoilState<CanvasCoodi[]>(CanvasCoodinateState);
 
     const handleResize = () => {
         const canvas = canvasRef.current;
         if (canvas) {
+            setCanvasRef(canvas); // save 컨트롤을 위한 ref 상태관리
             setCanvasWidth(canvas.offsetWidth);
             setCanvasHeight(canvas.offsetHeight);
             const ctx = canvas.getContext('2d');
@@ -59,6 +64,15 @@ export default function CanvasGrid(props: CanvasGridProps) {
                     (event.nativeEvent.offsetY / canvasHeight) * rows
                 );
                 ctx.fillStyle = canvasColor;
+                const coodinate = {
+                    x: x,
+                    y: y,
+                    color: canvasColor,
+                }
+
+                // 캔버스의 상태 저장
+                setCanvasCoodinate((prev) => [...prev, coodinate])
+                
                 ctx.strokeStyle = '#eeeeeeb3';
                 ctx.fillRect(x * cellSize, y * cellSize, cellSize, cellSize);
                 ctx.strokeRect(x * cellSize, y * cellSize, cellSize, cellSize);

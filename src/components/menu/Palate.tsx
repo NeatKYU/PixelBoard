@@ -14,8 +14,6 @@ export const Palate = () => {
 		setColor(color.hex)
 	}
 
-	console.log('current color', color)
-
 	return (
 		<Container>
 			<Label>Color</Label>
