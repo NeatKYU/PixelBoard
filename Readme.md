@@ -1,6 +1,6 @@
 ## 픽셀 아트 에디터
 간단한 픽셀 아트 에디터 입니다. 새로운 기능이 추가되면 바로바로 업데이트 될 예정입니다.
-<img src="https://img.shields.io/badge/react?style=for-the-badge&logo=react&logoColor=white">
+<img src="https://img.shields.io/badge/react-black?style=for-the-badge&logo=react&logoColor=white">
 
 ### Usage
 ```
