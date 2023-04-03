@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { TwitterPicker } from 'react-color'
+import { SketchPicker } from 'react-color'
 import { useRecoilState } from 'recoil';
 import { CanvasColorState } from '@/atom';
 // interface PlatteProps {
@@ -17,7 +17,7 @@ export const Palate = () => {
 	return (
 		<Container>
 			<Label>Color</Label>
-			<TwitterPicker onChange={handleColor}/>
+			<SketchPicker color={color} onChange={handleColor}/>
 		</Container>
 	)
 }
@@ -38,10 +38,10 @@ const Label = styled.div`
 	width: 100%;
 	height: auto;
 
-	margin: 5px 0 15px 20px;
+	margin: 20px 5px 15px 5px;
 
 	display: flex;
-	justify-content: start;
+	justify-content: center;
 
 	color: white;
 
