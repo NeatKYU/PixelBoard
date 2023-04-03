@@ -1,14 +1,14 @@
 ## 픽셀 아트 에디터
 간단한 픽셀 아트 에디터 입니다. 새로운 기능이 추가되면 바로바로 업데이트 될 예정입니다.
 
-### Screen Shot
+### 📸Screen Shot
 ![image](https://user-images.githubusercontent.com/110021148/229415734-1503829a-fade-4e0b-8bcb-6b76be7c1b49.png)
 
 ### ✨Features
-* 픽셀 아트 에디트
-* 픽셀 이미지 저장
+✏️ 픽셀 아트 에디트
+✏️ 픽셀 이미지 저장
 
-### Usage
+### 👷Usage
 ```
 git clone https://github.com/NeatKYU/PixelBoard.git
 cd PixelBoard
@@ -16,7 +16,7 @@ npm install
 npm run dev
 ```
 
-### TODO List
+### 📌TODO List
 - [x] 픽셀 아트 캔버스
 - [x] 팔레트 구현
 - [x] 사이즈 조절 기능 구현
