@@ -2,6 +2,7 @@ import { CanvasColorState, CanvasCoodinateState, CanvasRefState } from '@/atom';
 import { useRef, useEffect, useState } from 'react';
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 import { CanvasCoodi } from '@/interface/index'
+import { CanvasColor } from '@/assets/constant/constant'
 
 interface CanvasGridProps {
     rows: number;
@@ -14,7 +15,7 @@ export default function CanvasGrid(props: CanvasGridProps) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const [canvasWidth, setCanvasWidth] = useState<number>(0);
     const [canvasHeight, setCanvasHeight] = useState<number>(0);
-    const canvasColor = useRecoilValue(CanvasColorState);
+    const canvasBrushColor = useRecoilValue(CanvasColorState);
     const setCanvasRef = useSetRecoilState<any>(CanvasRefState);
     const [canvasCoodinate, setCanvasCoodinate] = useRecoilState<CanvasCoodi[]>(CanvasCoodinateState);
 
@@ -30,7 +31,7 @@ export default function CanvasGrid(props: CanvasGridProps) {
                 //TODO 원래 색칠한 것 갖고있어야함
                 for (let i = 0; i < rows; i++) {
                     for (let j = 0; j < columns; j++) {
-                        ctx.strokeStyle = '#eeeeeeb3';
+                        ctx.strokeStyle = CanvasColor.strokeColor;
                         ctx.strokeRect(
                             j * cellSize,
                             i * cellSize,
@@ -66,17 +67,17 @@ export default function CanvasGrid(props: CanvasGridProps) {
                 const y = Math.floor(
                     (event.nativeEvent.offsetY / canvasHeight) * rows
                 );
-                ctx.fillStyle = canvasColor;
+                ctx.fillStyle = canvasBrushColor;
                 const coodinate = {
                     x: x,
                     y: y,
-                    color: canvasColor,
+                    color: canvasBrushColor,
                 }
 
                 // 캔버스의 상태 저장
                 setCanvasCoodinate((prev) => [...prev, coodinate])
                 
-                ctx.strokeStyle = '#eeeeeeb3';
+                ctx.strokeStyle = CanvasColor.strokeColor;
                 ctx.fillRect(x * cellSize, y * cellSize, cellSize, cellSize);
                 ctx.strokeRect(x * cellSize, y * cellSize, cellSize, cellSize);
             }
@@ -92,7 +93,7 @@ export default function CanvasGrid(props: CanvasGridProps) {
             style={{
                 maxWidth: '100%',
                 maxHeight: '100%',
-                background: '#afafaf7d',
+                background: CanvasColor.canvasBackgroundColor,
             }}
         />
     );

@@ -1,5 +1,6 @@
 import { atom } from "recoil";
 import { CanvasCoodi } from '@/interface/index'
+import { CanvasColor } from '@/assets/constant/constant'
 
 export const CanvasWidthState = atom<number>({
   key: "CanvasWidthState",
@@ -18,7 +19,7 @@ export const CanvasSizeState = atom<number>({
 
 export const CanvasColorState = atom<string>({
   key: 'CanvasColorState',
-  default: '#ffffff'
+  default: CanvasColor.brushColor
 })
 
 export const CanvasRefState = atom({
