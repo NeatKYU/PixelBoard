@@ -4,7 +4,7 @@
 ### Screen Shot
 ![image](https://user-images.githubusercontent.com/110021148/229415734-1503829a-fade-4e0b-8bcb-6b76be7c1b49.png)
 
-### Futures
+### ✨Features
 * 픽셀 아트 에디트
 * 픽셀 이미지 저장
 
