@@ -1,5 +1,6 @@
 ## 픽셀 아트 에디터
 간단한 픽셀 아트 에디터 입니다. 새로운 기능이 추가되면 바로바로 업데이트 될 예정입니다.
+<img src="https://img.shields.io/badge/react?style=for-the-badge&logo=react&logoColor=white">
 
 ### Usage
 ```
@@ -8,6 +9,9 @@ cd PixelBoard
 npm install
 npm run dev
 ```
+### Screen Shot
+![image](https://user-images.githubusercontent.com/110021148/229415734-1503829a-fade-4e0b-8bcb-6b76be7c1b49.png)
+
 
 ### TODO List
 - [x] 픽셀 아트 캔버스
