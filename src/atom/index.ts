@@ -31,3 +31,10 @@ export const CanvasCoodinateState = atom<CanvasCoodi[]>({
   key: 'CanvasCoodinateState',
   default: [],
 })
+
+// tool mode state
+type toolMode = 'brush' | 'eraser' | 'paint' | 'pipette'
+export const ToolModeState = atom<toolMode>({
+  key: 'ToolModeState',
+  default: 'brush',
+})
